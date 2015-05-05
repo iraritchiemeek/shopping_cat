@@ -1,1 +1,12 @@
-<h1>Shop</h1>
+<h1> Welcome to shopping Cat <%= image_tag("shopping.png", size: "64x64") %></h1>
+<div class="product_list">
+  <ul>
+
+    <% @products.each do |p| %>
+      <div id= "product_<%= p.id %>" >
+        <li><%= "#{p.name} $#{p.price}" %></li>
+      </div>
+    <% end %>
+
+  </ul>
+</div>
