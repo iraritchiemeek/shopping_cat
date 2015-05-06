@@ -1,17 +1,17 @@
 <h1> Welcome to shopping Cat <%= image_tag("shopping.png", size: "64x64") %></h1>
-<div class="product_list" >
-  <ul>
+<div class="product_list" ng-controller='catCtrl'>
 
-    <% @products.each do |p| %>
-      <div id= "product_<%= p.id %>" >
-        <li>
-          <%= "#{p.name} $#{p.price}" %>
-          <div class="add_to_cart">
-            <%= button_to "Add to cart", add_to_cart_path(p.id)%>
-          </div>
-        </li>
+    <h1 class='board-title'>
+      <div class='search'>
+        <%= image_tag("search.png", size: "64x64") %>
+        <input class="search-input" ng-model="query">
       </div>
-    <% end %>
+    <ul>
+        <div ng-repeat="cat in cats | orderBy:predicate:reverse | filter:query">
+            <li>
+            {{cat.name}} ${{cat.price}}
+          </li>
+        </div>
 
-  </ul>
+    </ul>
 </div>
