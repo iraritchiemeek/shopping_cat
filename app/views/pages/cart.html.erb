@@ -4,5 +4,6 @@
     <li><%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %></li>
 <% end %>
 <h2> Total: $<%= @cart.total %> </h2>
+<%= image_tag("checkout.png", size: "64x64") %><%= link_to "Checkout", checkout_path, method: 'post' %>
 
 

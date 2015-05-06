@@ -22,4 +22,12 @@ class PagesController < ApplicationController
     redirect_to cart_path
   end
 
+  def checkout
+    @cart = Order.find(session[:cart_id])
+    @cart.update(purchased: true)
+    @cart.save
+    @cart = current_user.orders.create
+    redirect_to cart_path
+  end
+
 end
