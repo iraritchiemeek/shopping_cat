@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+  include ActionView::Helpers::NumberHelper
   has_many :ordered_products
   has_many :products, through: :ordered_products
   belongs_to :user
@@ -27,7 +28,7 @@ class Order < ActiveRecord::Base
     self.products.each do |product|
       sum += product.price
     end
-    return sum
+    return number_to_currency(sum)
   end
 
 end

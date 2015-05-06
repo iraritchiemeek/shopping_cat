@@ -2,12 +2,14 @@
 <% @orders.each do |order| %>
   <ul>
     <li>
-      <strong>Order id:</strong> <%= order.id %> <strong>Purchased:</strong> <%= order.updated_at %><%=  %>
+      <strong>Order id:</strong> <%= order.id %>
+      <strong>Purchased:</strong> <%= order.updated_at %>
+      <strong>total:</strong> <%= order.total %>
       <% order.formatted_products.each do |hash| %>
-    <li>
-      <%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %>
-    </li>
-<% end %>
+        <li>
+          <%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %>
+        </li>
+      <% end %>
     </li>
   </ul>
 <% end %>

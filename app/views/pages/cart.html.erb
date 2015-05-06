@@ -2,11 +2,11 @@
 
 <% @cart.formatted_products.each do |hash| %>
     <li>
-      <%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %>
+      <%= hash[:name] %> - x<%= hash[:quantity] %> <%= number_to_currency(hash[:price]) %>
       <%= link_to image_tag("trash.png", size: "64x64"), remove_item_path(hash[:id]), method: 'delete' %>
     </li>
 <% end %>
-<h2> Total: $<%= @cart.total %> </h2>
+<h2> Total: <%= @cart.total %> </h2>
 <%= image_tag("checkout.png", size: "64x64") %><%= link_to "Checkout", checkout_path, method: 'post' %>
 <%= image_tag("contact.png", size: "64x64") %><%= link_to "Previous Orders", orders_path%>
 

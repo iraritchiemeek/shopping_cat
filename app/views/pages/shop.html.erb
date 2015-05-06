@@ -9,8 +9,8 @@
     <ul>
         <div ng-repeat="cat in cats | orderBy:predicate:reverse | filter:query">
             <li>
-              {{cat.name}} ${{cat.price}}
-              <%= link_to 'Add to Cart', URI::unescape( add_to_cart_path('{{ cat.id}}') ), method: 'post' %>
+              {{cat.name}} {{cat.price | currency:"$"}}
+              <%= link_to 'Add to Cart', URI::unescape( add_to_cart_path('{{cat.id}}') ), method: 'post' %>
             </li>
 
         </div>
