@@ -17,7 +17,7 @@ class Order < ActiveRecord::Base
     unique_products = self.products.uniq
     output = []
     unique_products.each do |unique_product|
-      output << {name: unique_product.name, quantity: self.products.to_a.count {|p| unique_product.name == p.name}, price: unique_product.price}
+      output << {name: unique_product.name, quantity: self.products.to_a.count {|p| unique_product.name == p.name}, price: unique_product.price, id:unique_product.id}
     end
     return output
   end

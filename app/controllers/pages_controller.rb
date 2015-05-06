@@ -27,6 +27,15 @@ class PagesController < ApplicationController
     @cart.update(purchased: true)
     @cart.save
     @cart = current_user.orders.create
+    session[:cart_id] = @cart.id
+    redirect_to cart_path
+  end
+
+  def remove_item
+    @cart = Order.find(session[:cart_id])
+    @product = @cart.ordered_products.find_by(product_id: params[:id])
+    puts @product.inspect
+    @product.destroy
     redirect_to cart_path
   end
 
