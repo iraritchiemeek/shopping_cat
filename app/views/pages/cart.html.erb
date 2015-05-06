@@ -1,0 +1,8 @@
+<h1> Welcome to your cat cart<%= image_tag("cart.png", size: "64x64") %></h1>
+
+<% @cart.formatted_products.each do |hash| %>
+    <li><%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %></li>
+<% end %>
+<h2> Total: $<%= @cart.total %> </h2>
+
+
