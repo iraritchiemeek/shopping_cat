@@ -1,4 +1,4 @@
-<h1>Welcome to Shopping Cat</h1>
+<h1>Welcome to Shopping Cat<%= image_tag("buy.png", size: "64x64") %></h1>
 
 <% if user_signed_in? %>
   <%= "Welcome #{current_user.email}" %>

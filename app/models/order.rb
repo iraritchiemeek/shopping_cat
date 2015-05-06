@@ -29,4 +29,5 @@ class Order < ActiveRecord::Base
     end
     return sum
   end
+
 end

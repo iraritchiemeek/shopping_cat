@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   delete "/cart/remove_item/:id" => "pages#remove_item", as: 'remove_item'
+
   post "/cart/checkout" => "pages#checkout", as: 'checkout'
   post "/cart/add_to_cart/:id" => "pages#add_to_cart", as: 'add_to_cart'
+
+  get '/orders' => "pages#orders", as: 'orders'
   get "/cart" => "pages#cart", as: 'cart'
   get "/shop" => "pages#shop", as: 'shop'
   root to: "pages#home"

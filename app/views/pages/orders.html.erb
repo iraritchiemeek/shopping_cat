@@ -1,0 +1,13 @@
+<h1>Your orders<%= image_tag("list.png", size: "64x64") %></h1>
+<% @orders.each do |order| %>
+  <ul>
+    <li>
+      <strong>Order id:</strong> <%= order.id %> <strong>Purchased:</strong> <%= order.updated_at %><%=  %>
+      <% order.formatted_products.each do |hash| %>
+    <li>
+      <%= hash[:name] %> - x<%= hash[:quantity] %> $<%= hash[:price] %>
+    </li>
+<% end %>
+    </li>
+  </ul>
+<% end %>

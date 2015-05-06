@@ -39,4 +39,8 @@ class PagesController < ApplicationController
     redirect_to cart_path
   end
 
+  def orders
+    @orders = current_user.orders.where(purchased: true)
+  end
+
 end
