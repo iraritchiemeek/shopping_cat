@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post "/cart/checkout" => "pages#checkout", as: 'checkout'
   post "/cart/add_to_cart/:id" => "pages#add_to_cart", as: 'add_to_cart'
 
+
+  delete '/users/sign_out' => "pages#sign_out"
   get '/orders' => "pages#orders", as: 'orders'
   get "/cart" => "pages#cart", as: 'cart'
   get "/shop" => "pages#shop", as: 'shop'

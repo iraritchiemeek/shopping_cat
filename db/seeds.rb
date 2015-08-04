@@ -8,3 +8,6 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+
+Product.create([{ name: 'Collar', price: 25 }, { name: 'Food', price: 10 }, { name: 'Toy', price: 5 }])

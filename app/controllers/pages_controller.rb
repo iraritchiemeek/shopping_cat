@@ -43,4 +43,9 @@ class PagesController < ApplicationController
     @orders = current_user.orders.where(purchased: true)
   end
 
+  def sign_out
+    destroy_user_session_path(current_user)
+    redirect_to root_path
+  end
+
 end

@@ -12,8 +12,6 @@
               {{cat.name}} {{cat.price | currency:"$"}}
               <%= link_to 'Add to Cart', URI::unescape( add_to_cart_path('{{cat.id}}') ), method: 'post' %>
             </li>
-
         </div>
-
     </ul>
 </div>
